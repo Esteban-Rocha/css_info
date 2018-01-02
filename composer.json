@@ -1,0 +1,7 @@
+{
+  "name": "zivtech/css_info",
+  "description": "Adds a visual helper of your theme's css within the admin section",
+  "type": "drupal-module",
+  "homepage": "https://github.com/zivtech/css_info",
+  "license": "GPL 2.0+"
+}

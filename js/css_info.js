@@ -14,10 +14,10 @@
         url: $themeFile,
         type:'HEAD',
         error: function() {
-          alert('Theme file does not exist')
+          alert('Theme file does not exist - Make sure you use this module with a compatible version of Bear Skin')
         },
         success: function() {
-          $body.append('<iframe id="toolbar-css-frame" name="toolbar-css-frame" src="'+$themeFile+'" class="toolbar-css-frame fixed allt" frameborder="0" width="400px" height="100%"></iframe>');
+          $body.append('<iframe id="toolbar-css-frame" name="toolbar-css-frame" src="'+$themeFile+'" class="toolbar-css-frame" frameborder="0" width="400px" height="100%"></iframe>');
           var $toolbarCssFrame = $('#toolbar-css-frame', context);
 
           var $extraCss = '' +
@@ -46,7 +46,6 @@
           });
         }
       });
-
     }
   };
 
