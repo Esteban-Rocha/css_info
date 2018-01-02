@@ -1,0 +1,13 @@
+global:
+  version: 1.x
+  css:
+    theme:
+      css/css_info.css:
+        minified: true
+  js:
+    js/css_info.js:
+      minified: false
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery

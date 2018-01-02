@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+}
+
+.toolbar-icon-css {
+  display: inline-block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 4px;
+  top: .5rem;
+  background: transparent url('../images/css.png') no-repeat 0 0;
+}
+
+.toolbar-icon-css.active {
+  animation: spin 2s linear infinite;
+}
+
+.toolbar {
+  z-index: 1002;
+}
+
+.toolbar-css-frame {
+  z-index: 1001;
+  right: 0;
+  margin-right: -400px;
+  top: 39px;
+  width: 400px;
+  height: calc(100% - 39px);
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  background: white;
+  transition: margin .3s ease-in-out;
+}
+
+.toolbar-css-frame * {
+  max-width: 400px;
+}
+
+.toolbar-css-frame.open {
+  margin-right: 0;
+}
+
+.toolbar-tray-open .toolbar-css-frame {
+  top: 79px;
+  height: calc(100% - 79px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

@@ -1,0 +1,6 @@
+name: CSS Info
+description: Adds a visual helper of your theme's css within the admin section
+package: Custom
+
+type: module
+core: 8.x

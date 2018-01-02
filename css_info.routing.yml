@@ -1,0 +1,3 @@
+css_info.admin_settings:
+  requirements:
+    _permission: 'administer site configuration'

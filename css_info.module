@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * The CSS Info module.
+ */
+
+/**
+ * Implements hook_toolbar().
+ */
+function css_info_toolbar() {
+  $theme = \Drupal::config('system.theme')->get('default');
+
+  $items = [];
+
+  $items['css_info'] = [
+    '#cache' => [
+      'contexts' => ['user.permissions'],
+    ]
+  ];
+
+  $items['css_info'] += [
+    '#type' => 'toolbar_item',
+    'tab' => [
+      '#type' => 'link',
+      '#title' => t('CSS Info'),
+      '#url' => \Drupal\Core\Url::fromUri("internal:/themes/$theme/docs/theme.html"),
+      '#attributes' => [
+        'id' => 'toolbar-icon-css',
+        'title' => t('CSS info'),
+        'class' => [
+          'toolbar-icon',
+          'trigger'
+        ],
+      ],
+    ],
+    '#attached' => [
+      'library' => [
+        'css_info/global',
+      ],
+    ],
+    '#weight' => 200,
+  ];
+
+  return $items;
+}
+
+function css_info_preprocess_html(&$variables) {
+  $theme_name = \Drupal::config('system.theme')->get('default');
+
+  $variables['#attached']['drupalSettings']['css_info']['theme_name'] = $theme_name;
+}
